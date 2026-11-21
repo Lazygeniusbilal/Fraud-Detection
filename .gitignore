@@ -17,3 +17,6 @@ models/
 
 # large regenerable prediction arrays
 results/**/*.npz
+# Data: download from Kaggle, do not commit
+unzip_data/
+data.zip
