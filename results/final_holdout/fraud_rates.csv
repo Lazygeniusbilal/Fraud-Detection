@@ -1,0 +1,3 @@
+window,rows,frauds,fraud_rate
+training 70%,413377,14538,0.03517
+holdout 30%,177162,6125,0.03457

@@ -1,0 +1,5 @@
+fold,train_blocks,valid_block,valid_rows,pr_auc,roc_auc,alert_budget_exact,alert_budget,alerts_flagged,budget_met,threshold,recall,precision,frauds_caught,frauds_missed,false_alarms,alerts,best_iteration,train_minutes
+1,A,B,118108,0.515,0.8611,4000.0,4000,3902,True,0.18,0.4548,0.5515,2152,2580,1750,3902,475.0,2.4188
+2,A+B,C,118108,0.47,0.8273,4000.0,4000,3930,True,0.31,0.4314,0.4863,1911,2519,2019,3930,650.0,5.2759
+3,A+B+C,D,118108,0.515,0.8739,4000.0,4000,3957,True,0.35,0.4752,0.5537,2191,2420,1766,3957,895.0,5.6907
+4,A+B+C+D,E,118108,0.4754,0.8548,4000.0,4000,3944,True,0.43,0.4557,0.4696,1852,2212,2092,3944,1000.0,5.3345

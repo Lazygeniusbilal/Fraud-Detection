@@ -1,0 +1,2 @@
+model,threshold,pooled_slice_rows,pooled_slice_frauds,pooled_alert_budget,pooled_alerts,pooled_recall,holdout_rows,holdout_frauds,pr_auc,roc_auc,recall,precision,frauds_caught,frauds_missed,false_alarms,total_alerts,alert_budget,within_budget
+LightGBM,0.3,116784,4448,3955,3939,0.5148,177162,6125,0.5179,0.8864,0.4802,0.5356,2941,3184,2550,5491,6000,True

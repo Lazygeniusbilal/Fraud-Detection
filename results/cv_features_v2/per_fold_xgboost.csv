@@ -1,0 +1,5 @@
+model,fold,train_blocks,valid_block,n_features,thr_rows,thr_alert_budget,thr_alerts,thr_budget_met,thr_recall,threshold,valid_rows,valid_frauds,pr_auc,roc_auc,recall,precision,alert_budget,alerts_flagged,budget_met,frauds_caught,frauds_missed,false_alarms,best_iteration,train_minutes
+XGBoost,1,A,B,427,10019,339,310,True,0.5984,0.1,82675,2350,0.4794,0.8631,0.506,0.4414,2799,2694,True,1189,1161,1505,1112.0,2.5671
+XGBoost,2,A+B,C,431,23523,796,756,True,0.5674,0.08,82676,3492,0.5064,0.8486,0.4092,0.6259,2800,2283,True,1429,2063,854,2279.0,5.1923
+XGBoost,3,A+B+C,D,430,35855,1214,1201,True,0.4959,0.16,82675,3117,0.4837,0.8395,0.4267,0.5532,2799,2404,True,1330,1787,1074,2127.0,6.8878
+XGBoost,4,A+B+C+D,E,381,47387,1604,1570,True,0.5,0.13,82676,3358,0.4969,0.8572,0.4515,0.5116,2800,2963,False,1516,1842,1447,2732.0,10.1307

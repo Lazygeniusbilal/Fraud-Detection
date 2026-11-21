@@ -1,0 +1,2 @@
+model,threshold,pooled_slice_rows,pooled_slice_frauds,pooled_alert_budget,pooled_alerts,pooled_recall,holdout_rows,holdout_frauds,pr_auc,roc_auc,recall,precision,frauds_caught,frauds_missed,false_alarms,total_alerts,alert_budget,within_budget
+XGBoost,0.17,116784,4448,3955,3867,0.531,177162,6125,0.4904,0.8792,0.7974,0.1236,4884,1241,34632,39516,6000,False

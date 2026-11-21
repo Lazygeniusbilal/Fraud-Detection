@@ -1,0 +1,142 @@
+{
+  "LightGBM": {
+    "threshold": 0.3,
+    "pooled_slice_rows": 116784,
+    "pooled_slice_frauds": 4448,
+    "pooled_slice_fraud_rate": 0.03808740923414166,
+    "pooled_alert_budget_exact": 3955.1596843566904,
+    "pooled_alert_budget": 3955,
+    "pooled_alerts": 3939,
+    "pooled_recall": 0.5148381294964028,
+    "pooled_precision": 0.5813658288905814,
+    "budget_met_on_pooled_slice": true,
+    "fewer_than_500_frauds": false,
+    "per_fold_slices": [
+      {
+        "fold": 1,
+        "rows": 10019,
+        "frauds": 249
+      },
+      {
+        "fold": 2,
+        "rows": 23523,
+        "frauds": 846
+      },
+      {
+        "fold": 3,
+        "rows": 35855,
+        "frauds": 1589
+      },
+      {
+        "fold": 4,
+        "rows": 47387,
+        "frauds": 1764
+      }
+    ]
+  },
+  "XGBoost": {
+    "threshold": 0.17,
+    "pooled_slice_rows": 116784,
+    "pooled_slice_frauds": 4448,
+    "pooled_slice_fraud_rate": 0.03808740923414166,
+    "pooled_alert_budget_exact": 3955.1596843566904,
+    "pooled_alert_budget": 3955,
+    "pooled_alerts": 3867,
+    "pooled_recall": 0.5310251798561151,
+    "pooled_precision": 0.6108094129816395,
+    "budget_met_on_pooled_slice": true,
+    "fewer_than_500_frauds": false,
+    "per_fold_slices": [
+      {
+        "fold": 1,
+        "rows": 10019,
+        "frauds": 249
+      },
+      {
+        "fold": 2,
+        "rows": 23523,
+        "frauds": 846
+      },
+      {
+        "fold": 3,
+        "rows": 35855,
+        "frauds": 1589
+      },
+      {
+        "fold": 4,
+        "rows": 47387,
+        "frauds": 1764
+      }
+    ]
+  },
+  "HistGradientBoosting": {
+    "threshold": 0.37,
+    "pooled_slice_rows": 116784,
+    "pooled_slice_frauds": 4448,
+    "pooled_slice_fraud_rate": 0.03808740923414166,
+    "pooled_alert_budget_exact": 3955.1596843566904,
+    "pooled_alert_budget": 3955,
+    "pooled_alerts": 3928,
+    "pooled_recall": 0.4973021582733813,
+    "pooled_precision": 0.5631364562118126,
+    "budget_met_on_pooled_slice": true,
+    "fewer_than_500_frauds": false,
+    "per_fold_slices": [
+      {
+        "fold": 1,
+        "rows": 10019,
+        "frauds": 249
+      },
+      {
+        "fold": 2,
+        "rows": 23523,
+        "frauds": 846
+      },
+      {
+        "fold": 3,
+        "rows": 35855,
+        "frauds": 1589
+      },
+      {
+        "fold": 4,
+        "rows": 47387,
+        "frauds": 1764
+      }
+    ]
+  },
+  "Random Forest": {
+    "threshold": 0.49,
+    "pooled_slice_rows": 116784,
+    "pooled_slice_frauds": 4448,
+    "pooled_slice_fraud_rate": 0.03808740923414166,
+    "pooled_alert_budget_exact": 3955.1596843566904,
+    "pooled_alert_budget": 3955,
+    "pooled_alerts": 3850,
+    "pooled_recall": 0.4653776978417266,
+    "pooled_precision": 0.5376623376623376,
+    "budget_met_on_pooled_slice": true,
+    "fewer_than_500_frauds": false,
+    "per_fold_slices": [
+      {
+        "fold": 1,
+        "rows": 10019,
+        "frauds": 249
+      },
+      {
+        "fold": 2,
+        "rows": 23523,
+        "frauds": 846
+      },
+      {
+        "fold": 3,
+        "rows": 35855,
+        "frauds": 1589
+      },
+      {
+        "fold": 4,
+        "rows": 47387,
+        "frauds": 1764
+      }
+    ]
+  }
+}

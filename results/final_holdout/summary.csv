@@ -1,0 +1,5 @@
+model,threshold,pooled_slice_rows,pooled_slice_frauds,pooled_alert_budget,pooled_alerts,pooled_recall,holdout_rows,holdout_frauds,pr_auc,roc_auc,recall,precision,frauds_caught,frauds_missed,false_alarms,total_alerts,alert_budget,within_budget
+LightGBM,0.3,116784,4448,3955,3939,0.5148,177162,6125,0.5179,0.8864,0.4802,0.5356,2941,3184,2550,5491,6000,True
+XGBoost,0.17,116784,4448,3955,3867,0.531,177162,6125,0.4904,0.8792,0.7974,0.1236,4884,1241,34632,39516,6000,False
+HistGradientBoosting,0.37,116784,4448,3955,3928,0.4973,177162,6125,0.4756,0.8545,0.4593,0.4757,2813,3312,3101,5914,6000,True
+Random Forest,0.49,116784,4448,3955,3850,0.4654,177162,6125,0.4886,0.8918,0.4803,0.4449,2942,3183,3671,6613,6000,False

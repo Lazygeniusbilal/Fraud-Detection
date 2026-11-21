@@ -1,0 +1,6 @@
+block,rows,frauds,fraud_rate,start_day,end_day,holdout_rows_in_block,ends_before_holdout,source
+A,82675,2221,0.0269,1.0,20.6398,0,True,train_transaction.csv (oldest 70%)
+B,82675,2350,0.0284,20.64,40.8153,0,True,train_transaction.csv (oldest 70%)
+C,82676,3492,0.0422,40.8153,68.197,0,True,train_transaction.csv (oldest 70%)
+D,82675,3117,0.0377,68.1979,93.9983,0,True,train_transaction.csv (oldest 70%)
+E,82676,3358,0.0406,93.9984,120.8101,0,True,train_transaction.csv (oldest 70%)

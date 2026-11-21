@@ -1,0 +1,5 @@
+model,pr_auc_mean,pr_auc_std,roc_auc_mean,roc_auc_std,recall_mean,recall_std,precision_mean,precision_std,alerts_mean,alerts_std,alert_budget_per_fold,max_alerts_flagged,folds_budget_met,folds_total
+LightGBM,0.5267,0.0205,0.8842,0.0153,0.4762,0.018,0.5376,0.0381,3948.5,19.3649,4000,3968,4,4
+XGBoost,0.5225,0.0294,0.8749,0.0148,0.479,0.0144,0.5424,0.0482,3942.25,34.7695,4000,3973,4,4
+HistGradientBoosting,0.4938,0.0245,0.8543,0.0197,0.4543,0.0179,0.5153,0.0437,3933.25,23.5708,4000,3957,4,4
+Random Forest,0.4798,0.0237,0.8771,0.0127,0.4397,0.0142,0.4953,0.0408,3960.5,23.5018,4000,3994,4,4

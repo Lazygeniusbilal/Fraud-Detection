@@ -8,3 +8,12 @@ wheels/
 
 # Virtual environments
 .venv
+unzip_data
+models
+# run outputs
+logs/
+models/
+
+
+# large regenerable prediction arrays
+results/**/*.npz

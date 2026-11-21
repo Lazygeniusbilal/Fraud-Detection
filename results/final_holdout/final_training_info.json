@@ -1,0 +1,46 @@
+{
+  "data": {
+    "train_rows": 413377,
+    "train_frauds": 14538,
+    "train_fraud_rate": 0.03516886522472223,
+    "fit_rows": 351370,
+    "es_rows": 62007,
+    "holdout_rows": 177162,
+    "holdout_frauds": 6125,
+    "holdout_fraud_rate": 0.034572876802023006,
+    "train_days": [
+      1.0,
+      120.81013888888889
+    ],
+    "holdout_days": [
+      120.8102199074074,
+      182.99920138888888
+    ]
+  },
+  "models": {
+    "LightGBM": {
+      "best_iteration": 566.0,
+      "fit_rows": 351370,
+      "es_rows": 62007,
+      "minutes": 1.8652526617050171
+    },
+    "XGBoost": {
+      "best_iteration": 443.0,
+      "fit_rows": 351370,
+      "es_rows": 62007,
+      "minutes": 3.4388890663782754
+    },
+    "HistGradientBoosting": {
+      "best_iteration": 1000.0,
+      "fit_rows": 351370,
+      "es_rows": 62007,
+      "minutes": 3.997772479057312
+    },
+    "Random Forest": {
+      "best_iteration": NaN,
+      "fit_rows": 413377,
+      "es_rows": 0,
+      "minutes": 2.895266962051392
+    }
+  }
+}

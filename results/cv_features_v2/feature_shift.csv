@@ -1,0 +1,9 @@
+fold,slice,share_nonzero_card1_cnt_1h,share_nonzero_card1_cnt_24h,share_nonzero_card1_cnt_7d,median_secs_since_prev,share_new_card
+1,threshold_slice,0.4482,0.802,0.9216,4397.0,0.0472
+1,validation,0.0,0.0,0.2239,1034369.0,0.0544
+2,threshold_slice,0.4383,0.7897,0.9218,5170.0,0.0195
+2,validation,0.0,0.0,0.114,1630824.0,0.0254
+3,threshold_slice,0.4142,0.7801,0.9149,6268.0,0.0147
+3,validation,0.0,0.0,0.1172,1620883.0,0.023
+4,threshold_slice,0.3999,0.781,0.918,6845.0,0.0113
+4,validation,0.0,0.0,0.1215,1555774.0,0.015

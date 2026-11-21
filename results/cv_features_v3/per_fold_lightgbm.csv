@@ -1,0 +1,5 @@
+model,fold,train_blocks,valid_block,n_features,thr_rows,thr_alert_budget,thr_alerts,thr_budget_met,thr_recall,threshold,valid_rows,valid_frauds,pr_auc,roc_auc,recall,precision,alert_budget,alerts_flagged,budget_met,frauds_caught,frauds_missed,false_alarms,best_iteration,train_minutes
+LightGBM,1,A,B,427,10019,339,308,True,0.6024,0.17,82675,2350,0.4699,0.8687,0.5051,0.414,2799,2867,False,1187,1163,1680,97.0,0.307
+LightGBM,2,A+B,C,431,23523,796,794,True,0.5402,0.25,82676,3492,0.516,0.8635,0.425,0.5901,2800,2515,True,1484,2008,1031,156.0,1.0719
+LightGBM,3,A+B+C,D,430,35855,1214,1202,True,0.4783,0.34,82675,3117,0.5128,0.8634,0.4411,0.5929,2799,2319,True,1375,1742,944,209.0,1.4021
+LightGBM,4,A+B+C+D,E,381,47387,1604,1565,True,0.5023,0.31,82676,3358,0.5155,0.8788,0.4506,0.5637,2800,2684,True,1513,1845,1171,304.0,1.7504
