@@ -9,6 +9,13 @@ base features. On a held-out window of the latest 30% of transactions (177,162 r
 caught 48% of fraud with 54% precision, while staying under the alert budget (5,491
 alerts against a limit of 6,000).
 
+![Results overview: 177,162 transactions screened, 2,941 frauds caught, 54% alert precision, 5,491 alerts within a 6,000 budget](portfolio/1_results_overview.png)
+
+**In plain terms:** over 2 months of unseen card payments, the model sent about 88
+transactions a day to analysts. More than half of them were real fraud, and together they
+covered about half of all fraud in that period. That workload fits a small fraud team of
+1 to 2 analysts (assuming a review capacity of about 100 alerts a day).
+
 ---
 
 ## Contents
@@ -72,7 +79,21 @@ Time-based cross-validation on the oldest 70% (4 folds, mean ± sample std):
 
 Source: `results/time_cv/summary.csv`.
 
-Plots:
+How much fraud the model catches as more alerts are allowed, with the review budget
+marked:
+
+![Share of fraud caught against alerts sent to analysts, with the 6,000-alert budget and the chosen operating point](portfolio/2_catch_rate_vs_workload.png)
+
+All four models side by side. LightGBM ranks fraud best and stays within budget; XGBoost
+ranks fraud well but its frozen threshold raised 6.6 times too many alerts (see
+[XGBoost score shift](#4-xgboost-score-shift-between-cv-and-final-models)):
+
+![PR-AUC and alerts versus budget for LightGBM, XGBoost, Random Forest and HistGradientBoosting on the holdout](portfolio/3_model_comparison.png)
+
+The three images above are built from the saved holdout results by
+`src/visualization/portfolio_charts.py`.
+
+Other plots:
 
 - `results/final_holdout/recall_vs_false_alarms_holdout.png`: recall against false
   alarms for each model on the holdout, with the frozen threshold marked.
@@ -104,6 +125,11 @@ number of cases. So the question is not "what is the best threshold in theory?" 
 budget of **3,000 alerts per 88,581 transactions** (about 3.4% of traffic). The budget is
 scaled by row count to whatever window it is applied to. For the 177,162-row holdout that
 is 6,000 alerts.
+
+The holdout covers 62 days (day 121 to day 183), so 6,000 alerts is about 97 a day. An
+analyst can typically clear something like 50 to 150 alerts a day, depending on how much
+checking each case needs, so this budget fits a team of 1 to 2 analysts. The budget is
+an assumption made for this project, not a figure from a real fraud team.
 
 **Main ranking metric: PR-AUC.** PR-AUC (average precision) summarises the
 precision-recall trade-off across all thresholds and is sensitive to performance on the
@@ -390,6 +416,7 @@ fraud_detection/
 ├── notes.md                        Working notes (threshold leakage fix, HistGB early stopping)
 ├── notebooks/
 │   └── fraudclassification.ipynb   Earlier exploratory notebook (random splits, many models)
+├── portfolio/                      Dashboard-style result images used in this README
 ├── src/
 │   ├── __init__.py                 Paths for data.zip and the unzip folder
 │   ├── config.py                   Paths to the unzipped CSV files
@@ -402,14 +429,16 @@ fraud_detection/
 │   │   ├── feature_engineering.py  Identity feature splits, encoding, fit/transform pipeline
 │   │   ├── history_features.py     Leakage-safe card-history features
 │   │   └── leakage_checks.py       Reference implementation and leakage tests for history features
-│   └── model_training/
-│       ├── evaluation.py           Metrics, threshold sweep, alert-budget threshold rule, plots
-│       ├── train_xgboost.py        70/15/15 time split, single XGBoost model (F1 threshold)
-│       ├── compare_model.py        Early comparison incl. Logistic Regression (imputed features)
-│       ├── boosting_models.py      Four tree models, no imputation, alert-budget threshold
-│       ├── time_cv.py              4-fold expanding-window time CV on the oldest 70%
-│       ├── cv_features_v2.py       Time CV with card-history features (v2 and v3)
-│       └── final_holdout.py        Frozen thresholds, final training, one-shot holdout
+│   ├── model_training/
+│   │   ├── evaluation.py           Metrics, threshold sweep, alert-budget threshold rule, plots
+│   │   ├── train_xgboost.py        70/15/15 time split, single XGBoost model (F1 threshold)
+│   │   ├── compare_model.py        Early comparison incl. Logistic Regression (imputed features)
+│   │   ├── boosting_models.py      Four tree models, no imputation, alert-budget threshold
+│   │   ├── time_cv.py              4-fold expanding-window time CV on the oldest 70%
+│   │   ├── cv_features_v2.py       Time CV with card-history features (v2 and v3)
+│   │   └── final_holdout.py        Frozen thresholds, final training, one-shot holdout
+│   └── visualization/
+│       └── portfolio_charts.py     Builds the images in portfolio/ from results/final_holdout/
 └── results/
     ├── time_cv/                    CV on the oldest 70% (blocks, folds, per-fold, summary, box plot)
     ├── time_cv_full590k/           Earlier CV run on all 590,540 rows (before the holdout was set aside)
@@ -500,6 +529,12 @@ uv run python -m src.model_training.final_holdout --report
 `--thresholds` refuses to run if `frozen_thresholds.json` already exists, and `--final`
 refuses to run if the holdout has already been scored. This is on purpose. To rerun from
 scratch, move `results/final_holdout/` aside first.
+
+**Rebuild the README images** from the saved holdout results (no training needed):
+
+```bash
+uv run python -m src.visualization.portfolio_charts
+```
 
 **3. Card-history feature experiments** (LightGBM and XGBoost only):
 
